@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class ScoreController : MonoBehaviour {
 
     public static int scoreValue = 0;
-    Text score;
+    Text score, HP;
 
 
 	// Use this for initialization
@@ -19,8 +19,11 @@ public class ScoreController : MonoBehaviour {
 	void Update () {
 
         score.text = "Score: " + scoreValue;
-
-	}
+        if (scoreValue >= PlayerPrefs.GetInt("score", 0))
+        {
+            PlayerPrefs.SetInt("score", scoreValue);
+        }
+    }
 
     
 

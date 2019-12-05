@@ -1,26 +1,31 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour {
 
     [Header("Player Movement")]
     public float speed;
-
+    public int hp;
     //bullets position
     public GameObject PlayerBullet;
     public GameObject bullet1; //left position
     public GameObject bullet2; //right position
+    public Text HP;
 
 
 
 	// Use this for initialization
-	void Start () {
-		
-	}
+	void Start () 
+    {
+        PlayerPrefs.SetInt("out", 0);
+    }
 	
 	// Update is called once per frame
 	void Update () {
+
+        HP.text = "HP: " + hp; 
 
         //Movement
         float x = Input.GetAxisRaw("Horizontal");
@@ -37,13 +42,27 @@ public class PlayerController : MonoBehaviour {
             
             fire();
         }
-
-
-
-
+          if (hp <= 0)
+        {
+            //if hp is out
+            PlayerPrefs.SetInt("out", 1);
+        }
     }
 
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        //collide with bullet or player
+        //Debug.Log(1);
+        if (collision.gameObject.CompareTag("EnemyShipTag"))
+        {
+            hp -= 5;   
+        }
+        if (collision.gameObject.CompareTag("EnemyBullet"))
+        {
+            hp -= 10;
+        }
 
+    }
     //function to move player
     void move(Vector2 direction)
     {

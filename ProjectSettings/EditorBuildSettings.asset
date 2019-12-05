@@ -6,6 +6,21 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: fec01d612331cef46bceb471cd0de00c
+  - enabled: 1
+    path: Assets/Scenes/Axis Plane.unity
+    guid: 3080a0402c0ec4242bf30d58c799c747
+  - enabled: 1
+    path: Assets/Scenes/PlanSelection.unity
+    guid: 304ea0d181f2ddc4a9a9e8eb175fe8c9
+  - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Level 2.unity
+    guid: a359f4e60d9a01b498fddcc1a7fcbe52
+  - enabled: 1
+    path: Assets/Scenes/Level 3.unity
+    guid: c0c1a71e8dc588e479f8e2e8651e48aa
   m_configObjects: {}
