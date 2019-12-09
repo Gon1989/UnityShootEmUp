@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class Enemy1Controller : MonoBehaviour {
 
@@ -41,7 +43,7 @@ public class Enemy1Controller : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        
+        Debug.Log("Enemy " + hp);
         Vector2 position = transform.position;
 
         position = new Vector2(position.x, position.y - speed * Time.deltaTime);
@@ -61,8 +63,21 @@ public class Enemy1Controller : MonoBehaviour {
         if (hp <= 0)
         {
             //add 10 to the score accessing ScoreController class
+            Debug.Log("Died");
             ScoreController.scoreValue += 10;
             Destroy(gameObject); //destroy   
+            if (gameObject.name == "Enemy2")
+            {
+                if (SceneManager.GetActiveScene().buildIndex != 5)
+                {
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                }
+                else
+                {
+                    SceneManager.LoadScene(0);
+                }
+
+            }
         }
 
         //call function to check firing time rate

@@ -1,6 +1,3 @@
 # UnityShootEmUp
-
-Future updates:
--Boss figh
--different enemies with interesting bullet patters.
--Better HUD with animations
+The basic idea of this game is taken from a retro game “1942” which was an aircraft shooting game. 1942 was set in the Pacific theater of World War II. The main goal in the game was to reach Tokyo and destroy the entire Japanese air fleet. The player has to shoot down enemy planes while avoiding enemy fire, the player can move in all 4 directions. During the game the player may collect a series of power-ups. The game will comprise of 5 stages, each stage featuring a boss battle. So we will be using this framework of the game to develop the Aircraft Battle game, whereas the new addition will be the information shown to the user about the battlefield and the plane the user will shoot down. 
+ Credit goes to talasparda@gmail.com
